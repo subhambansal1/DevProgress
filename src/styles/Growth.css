@@ -1,0 +1,360 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Inter:wght@400;600&display=swap");
+
+:root {
+    --red: #ff2d2d;
+    --red-soft: rgba(255, 45, 45, 0.25);
+    --glass: rgba(255, 255, 255, 0.03);
+}
+
+.growth-page {
+    min-height: 100vh;
+    padding: 80px 50px 50px;
+    background:
+        radial-gradient(circle at top, #160000, #000);
+    color: white;
+    font-family: "Inter", sans-serif;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.gr-root {
+    min-height: 100vh;
+    padding: 50px;
+    background:
+        radial-gradient(circle at top, #160000, #000);
+    color: white;
+    font-family: "Inter", sans-serif;
+    max-width: 1500px;
+    margin: auto;
+}
+
+/* HEADER */
+
+.gr-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.gr-header h1 {
+    font-family: "Orbitron", sans-serif;
+    font-size: 48px;
+    letter-spacing: 1px;
+}
+
+.gr-header p {
+    opacity: 0.7;
+}
+
+/* GRID */
+
+.gr-main-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 28px;
+    margin-bottom: 35px;
+}
+
+.gr-side-column {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.gr-lower-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 28px;
+}
+
+/* CARD SYSTEM */
+
+.gr-card {
+    background: var(--glass);
+    border-radius: 22px;
+    padding: 24px;
+    position: relative;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow:
+        inset 0 0 0.5px rgba(255, 255, 255, 0.15),
+        0 0 25px rgba(255, 0, 0, 0.25);
+}
+
+.gr-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 22px;
+    padding: 1px;
+    background: linear-gradient(135deg,
+            rgba(255, 45, 45, 0.8),
+            rgba(255, 45, 45, 0.1),
+            rgba(255, 45, 45, 0.6));
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.gr-card-large {
+    height: 360px;
+}
+
+/* TITLES */
+
+.gr-card-title {
+    font-family: "Orbitron", sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.8px;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+/* GRAPH PLACEHOLDER */
+
+.gr-graph-placeholder {
+    height: 220px;
+    border-radius: 14px;
+    background: linear-gradient(180deg, #0a0000, #000);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+}
+
+/* INLINE STATS */
+
+.gr-inline-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 15px;
+    font-size: 13px;
+    opacity: 0.85;
+}
+
+/* HEATMAP */
+
+.gr-heatmap-placeholder {
+    height: 120px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #0d0000, #000);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+}
+
+/* SKILLS */
+
+.gr-skill-row {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    align-items: center;
+    gap: 10px;
+    margin: 12px 0;
+}
+
+.gr-skill-bar {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.gr-skill-bar div {
+    height: 100%;
+    background: linear-gradient(135deg, var(--red), #ff5c5c);
+    box-shadow: 0 0 12px var(--red);
+}
+
+/* TIMELINE */
+
+.gr-timeline {
+    list-style: none;
+    padding: 0;
+}
+
+.gr-timeline li {
+    padding: 10px 0;
+    border-left: 2px solid var(--red);
+    padding-left: 12px;
+    margin-bottom: 10px;
+}
+
+/* STATS */
+
+.gr-stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.gr-stat-box {
+    padding: 16px;
+    text-align: center;
+    border-radius: 14px;
+    background: rgba(255, 45, 45, 0.1);
+}
+
+/* QUOTE */
+
+.gr-quote-card {
+    text-align: center;
+    font-style: italic;
+    opacity: 0.85;
+}
+
+
+/* GRAPH WRAPPER */
+
+.gr-chart-wrap {
+    height: 220px;
+    padding: 10px;
+}
+
+/* Make chart bold & compact */
+canvas {
+    max-height: 200px !important;
+}
+
+/* HOVER GLOW */
+
+.gr-card {
+    transition: all 0.35s ease;
+}
+
+.gr-card:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        inset 0 0 0.5px rgba(255, 255, 255, 0.2),
+        0 0 40px rgba(255, 0, 0, 0.55);
+    
+}
+
+/* HEATMAP */
+
+.gr-heatmap-grid {
+    display: grid;
+    width: 100px;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.gr-heat-cell {
+    width: 100%;
+    padding-top: 100%;
+    border-radius: 4px;
+}
+
+.lvl-0 {
+    background: #120000;
+}
+
+.lvl-1 {
+    background: rgba(255, 45, 45, 0.25);
+}
+
+.lvl-2 {
+    background: rgba(255, 45, 45, 0.5);
+}
+
+.lvl-3 {
+    background: rgba(255, 45, 45, 0.85);
+}
+
+/* SKILL BAR ANIMATION */
+
+.gr-skill-bar div {
+    animation: growBar 1.2s ease-out;
+}
+
+@keyframes growBar {
+    from {
+        width: 0;
+    }
+}
+
+/* TIMELINE DOTS */
+
+.gr-timeline li {
+    position: relative;
+    padding-left: 20px;
+}
+
+.gr-timeline .dot {
+    position: absolute;
+    left: -9px;
+    top: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--red);
+    box-shadow: 0 0 10px var(--red);
+}
+
+/* Stats Row */
+.gr-stats-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.gr-stat-card {
+  background: var(--card, rgba(255,255,255,0.04));
+  border: 1px solid var(--border, rgba(255,255,255,0.08));
+  border-radius: 14px;
+  padding: 18px 22px;
+  text-align: center;
+  flex: 1;
+  min-width: 100px;
+}
+
+.gr-stat-icon {
+  font-size: 22px;
+}
+
+.gr-stat-card h2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text, #fff);
+  margin: 6px 0 2px;
+}
+
+.gr-stat-card p {
+  font-size: 12px;
+  color: var(--text2, #aaa);
+}
+
+/* Progress Bar */
+.gr-progress-card {
+  margin-bottom: 20px;
+}
+
+.gr-progress-bar-wrap {
+  background: rgba(255,255,255,0.08);
+  border-radius: 50px;
+  height: 12px;
+  margin: 12px 0 8px;
+  overflow: hidden;
+}
+
+.gr-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ff2d2d, #ff6b6b);
+  border-radius: 50px;
+  transition: width 1s ease;
+}
+
+.gr-progress-text {
+  font-size: 13px;
+  color: var(--text2, #aaa);
+}
+
+/* Heatmap card */
+.gr-heatmap-card {
+  margin-bottom: 20px;
+}

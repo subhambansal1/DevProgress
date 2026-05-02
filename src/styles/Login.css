@@ -1,0 +1,473 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Segoe UI, sans-serif;
+}
+
+/* Animated Gradient Background */
+
+.login-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(-45deg, #7c6cff, #ff6a88, #ff9a44, #6dd5ed);
+    background-size: 400% 400%;
+
+    animation: gradientBG 12s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Main Card */
+
+.login-card {
+
+    width: 1000px;
+    max-width: 95%;
+    min-height: 620px;
+
+    display: flex;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    backdrop-filter: blur(12px);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+
+    transition: all 0.4s ease;
+}
+
+/* Hover animation */
+
+.login-card:hover {
+
+    transform: translateY(-10px);
+
+    box-shadow: 0 40px 90px rgba(0, 0, 0, 0.35);
+}
+
+/* LEFT SIDE */
+
+.login-left {
+
+    flex: 1;
+
+    padding: 50px;
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.title {
+
+    font-size: 28px;
+    margin-bottom: 5px;
+
+}
+
+.subtitle {
+
+    font-size: 14px;
+    margin-bottom: 25px;
+    opacity: 0.9;
+
+}
+
+/* Toggle buttons */
+
+.toggle-container {
+
+    display: flex;
+
+    margin-bottom: 25px;
+
+    background: rgba(255, 255, 255, 0.2);
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+}
+
+.toggle {
+
+    flex: 1;
+
+    padding: 10px;
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-weight: 500;
+
+    transition: 0.3s;
+}
+
+.toggle.active {
+
+    background: white;
+    color: black;
+
+}
+
+/* FORM */
+
+.form {
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+/* Floating input */
+
+.floating-input {
+
+    position: relative;
+
+    margin-bottom: 18px;
+
+}
+
+.floating-input input {
+
+    width: 100%;
+
+    padding: 14px 15px;
+
+    border-radius: 25px;
+
+    border: none;
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.2);
+
+    color: white;
+
+    font-size: 14px;
+
+}
+
+.floating-input label {
+
+    position: absolute;
+
+    left: 15px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #ddd;
+
+    pointer-events: none;
+
+    transition: 0.3s;
+
+    font-size: 14px;
+
+}
+
+/* Floating animation */
+
+.floating-input input:focus+label,
+.floating-input input:valid+label {
+
+    top: -8px;
+
+    font-size: 12px;
+
+    background: rgba(0, 0, 0, 0.6);
+
+    padding: 2px 6px;
+
+    border-radius: 10px;
+
+}
+
+/* PASSWORD FIELD */
+
+.password-field {
+
+    display: flex;
+    align-items: center;
+
+}
+
+/* Eye icon */
+
+.eye-icon {
+
+    position: absolute;
+
+    right: 15px;
+
+    cursor: pointer;
+
+    color: white;
+
+    font-size: 18px;
+
+}
+
+/* Options */
+
+.options {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 13px;
+
+    margin-bottom: 10px;
+
+}
+
+.options a {
+
+    color: white;
+    text-decoration: none;
+
+}
+
+/* Submit button */
+
+.submit-btn {
+
+    margin-top: 12px;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background: #ff7a7a;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+.submit-btn:hover {
+
+    background: #ff5e5e;
+
+}
+
+/* Social login */
+
+.social-login {
+
+    margin-top: 25px;
+
+    display: flex;
+
+    gap: 12px;
+
+}
+
+/* Social buttons */
+
+.social {
+
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    background: white;
+
+    transition: 0.3s;
+
+}
+
+.social:hover {
+
+    transform: scale(1.1);
+
+}
+
+/* Specific platforms */
+
+.github {
+
+    background: #24292e;
+    color: white;
+
+}
+
+.linkedin {
+
+    background: #0077b5;
+    color: white;
+
+}
+
+/* RIGHT SIDE */
+
+.login-right {
+
+    flex: 1;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    padding: 50px;
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.login-right h2 {
+
+    font-size: 24px;
+
+}
+
+.quote {
+
+    margin-top: 20px;
+    opacity: 0.9;
+    line-height: 1.5;
+
+}
+
+/* Info card */
+
+.info-card {
+
+    background: white;
+
+    color: black;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    margin-top: 30px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+}
+
+.info-card h3 {
+
+    margin-bottom: 8px;
+
+}
+
+/* Responsive */
+
+@media(max-width:900px) {
+
+    .login-card {
+
+        flex-direction: column;
+
+    }
+
+    .login-right {
+
+        display: none;
+
+    }
+
+}
+/* Form Animation */
+
+.form {
+
+    transition: all 0.5s ease;
+
+}
+
+/* Login animation */
+
+.login-mode {
+
+    animation: slideRight 0.5s ease;
+
+}
+
+/* Signup animation */
+
+.signup-mode {
+
+    animation: slideLeft 0.5s ease;
+
+}
+
+/* Keyframes */
+
+@keyframes slideLeft {
+
+    0% {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+@keyframes slideRight {
+
+    0% {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}

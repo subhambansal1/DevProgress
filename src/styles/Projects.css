@@ -1,0 +1,158 @@
+.projects-page {
+    padding: 80px 40px 50px;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+.proj-title {
+    font-size: 32px;
+    font-family: "Orbitron";
+    color: #ff2d2d;
+    margin-bottom: 20px;
+}
+
+.proj-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.proj-add input {
+    background: #111;
+    border: 1px solid rgba(255, 0, 0, 0.35);
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+}
+
+.proj-add button {
+    background: #ff2d2d;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    color: white;
+}
+
+.proj-filters select {
+    background: #111;
+    border: 1px solid rgba(255, 0, 0, 0.35);
+    color: white;
+    padding: 8px;
+    border-radius: 6px;
+    margin-left: 8px;
+}
+
+.proj-heatmap {
+    margin-bottom: 30px;
+    background: rgba(255, 0, 0, 0.05);
+    border: 1px solid rgba(255, 0, 0, 0.25);
+    padding: 20px;
+    border-radius: 14px;
+}
+
+.heatmap-scroll {
+    overflow-x: auto;
+}
+
+.projects-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 25px;
+}
+
+.proj-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.proj-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 0, 0, 0.25);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.25);
+}
+
+.repo-analytics {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.badge {
+    background: #1a1a1a;
+    border: 1px solid rgba(255, 0, 0, 0.35);
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+.progress-bar {
+    height: 8px;
+    background: #111;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #ff2d2d;
+}
+
+.commit-graph {
+    margin-top: 12px;
+}
+
+.ai-summary {
+    font-size: 12px;
+    margin-top: 10px;
+    opacity: 0.85;
+}
+
+.proj-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+}
+
+.proj-actions button {
+    background: #111;
+    border: 1px solid rgba(255, 0, 0, 0.4);
+    color: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+.delete-btn {
+    background: #ff1744;
+    border: none;
+}
+.dev-analytics-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.analytics-card {
+    background: rgba(255, 0, 0, 0.05);
+    border: 1px solid rgba(255, 0, 0, 0.25);
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.analytics-card h3 {
+    font-family: "Orbitron";
+    color: #ff2d2d;
+}
+
+.analytics-card p {
+    font-size: 12px;
+    opacity: 0.8;
+}

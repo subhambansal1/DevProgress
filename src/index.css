@@ -1,0 +1,359 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========== THEME VARIABLES ========== */
+
+html, body {
+  scroll-behavior: smooth;
+}
+
+/* Dark theme (default) */
+[data-theme="dark"],
+[data-theme="dark"] * {
+  --bg-primary: #0b0b0b;
+  --bg-secondary: #1a1a2e;
+  --bg-tertiary: rgba(255, 255, 255, 0.04);
+  --text-primary: #ffffff;
+  --text-secondary: #aaaaaa;
+  --text-tertiary: #666666;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-color-light: rgba(255, 255, 255, 0.12);
+  --accent: #ff2d2d;
+  --accent-light: #ff6b6b;
+}
+
+/* Light theme */
+[data-theme="light"],
+[data-theme="light"] * {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --bg-tertiary: #f9f9f9;
+  --text-primary: #111111;
+  --text-secondary: #555555;
+  --text-tertiary: #999999;
+  --border-color: #e0e0e0;
+  --border-color-light: #f0f0f0;
+  --accent: #ff2d2d;
+  --accent-light: #ff5c5c;
+}
+
+/* ========== GLOBAL STYLES ========== */
+
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Ensure proper cascade */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary) !important;
+}
+
+p, span, div, a, li {
+  color: var(--text-primary);
+}
+
+/* Sidebar removed — all pages full width */
+.dp-root {
+  display: block !important;
+  background: var(--bg-primary) !important;
+}
+
+.dp-main {
+  margin-left: 0 !important;
+  padding-top: 84px !important;
+  padding-left: 32px !important;
+  padding-right: 32px !important;
+  max-width: 1200px;
+  margin: 0 auto !important;
+  background: var(--bg-primary) !important;
+}
+
+/* Growth page */
+.gr-root {
+  padding-top: 84px !important;
+  padding-left: 32px !important;
+  padding-right: 32px !important;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Current Learning Page */
+.current-learning-page {
+  background: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+[data-theme="light"] .cl-header {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%) !important;
+  border-color: #e0e0e0 !important;
+}
+
+[data-theme="light"] .cl-header h1 {
+  color: #111 !important;
+}
+
+[data-theme="light"] .cl-category {
+  color: #666 !important;
+}
+
+[data-theme="light"] .cl-stat-card {
+  background: #fff !important;
+  border-color: #ddd !important;
+  color: #111 !important;
+}
+
+[data-theme="light"] .stat-label,
+[data-theme="light"] .stat-value,
+[data-theme="light"] .stat-sub {
+  color: #111 !important;
+}
+
+/* ========== SCROLLBAR STYLING ========== */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 45, 45, 0.5);
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 45, 45, 0.8);
+}
+
+[data-theme="light"]::-webkit-scrollbar-thumb {
+  background: rgba(255, 45, 45, 0.3);
+}
+
+[data-theme="light"]::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 45, 45, 0.6);
+}
+
+/* ========== ANIMATIONS ========== */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 10px rgba(255, 45, 45, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(255, 45, 45, 0.6); }
+}
+
+/* ========== BUTTON STYLES ========== */
+
+button {
+  font-family: inherit;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* ========== INPUT FOCUS STATES ========== */
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+}
+
+/* ========== MODAL BACKDROP ========== */
+
+.modal-overlay {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* ========== UTILITY CLASSES ========== */
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #ff2d2d, #ff6b6b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ========== ENSURE THEME CONSISTENCY ACROSS PAGES ========== */
+
+/* Interview Prep */
+.interview-landing,
+.interview-options,
+.interview-setup,
+.interview-session,
+.interview-feedback {
+  background: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+.landing-hero h1,
+.interview-options h2,
+.interview-setup h2 {
+  color: var(--text-primary) !important;
+}
+
+.option-card {
+  background: var(--bg-tertiary) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+[data-theme="light"] .option-card {
+  background: #fff !important;
+  border-color: #e0e0e0 !important;
+}
+
+[data-theme="light"] .option-card h3 {
+  color: #111 !important;
+}
+
+/* Profile Page */
+.profile-root {
+  background:
+    radial-gradient(circle at 20% 10%, rgba(255, 45, 45, 0.15), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(255, 45, 45, 0.08), transparent 40%),
+    linear-gradient(180deg, #0b0b0b, #000) !important;
+  color: var(--text-primary) !important;
+}
+
+[data-theme="light"] .profile-root {
+  background:
+    radial-gradient(circle at 20% 10%, rgba(255, 45, 45, 0.08), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(255, 45, 45, 0.04), transparent 40%),
+    linear-gradient(180deg, #f8f8f8, #ffffff) !important;
+}
+
+[data-theme="light"] .profile-header-card h1,
+[data-theme="light"] .profile-header-card p {
+  color: #111 !important;
+}
+
+[data-theme="light"] .profile-card {
+  background: #fff !important;
+  border-color: #e0e0e0 !important;
+  color: #111 !important;
+}
+
+[data-theme="light"] .profile-card h3 {
+  color: #111 !important;
+}
+
+[data-theme="light"] .profile-card ul li {
+  color: #333 !important;
+}
+
+/* Settings Page */
+.settings-root {
+  background:
+    radial-gradient(circle at 20% 10%, rgba(255, 45, 45, 0.15), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(255, 45, 45, 0.08), transparent 40%),
+    linear-gradient(180deg, #0b0b0b, #000) !important;
+  color: var(--text-primary) !important;
+}
+
+[data-theme="light"] .settings-root {
+  background:
+    radial-gradient(circle at 20% 10%, rgba(255, 45, 45, 0.08), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(255, 45, 45, 0.04), transparent 40%),
+    linear-gradient(180deg, #f8f8f8, #ffffff) !important;
+}
+
+[data-theme="light"] .settings-header h1 {
+  color: #111 !important;
+}
+
+[data-theme="light"] .settings-card {
+  background: #fff !important;
+  border-color: #e0e0e0 !important;
+  color: #111 !important;
+}
+
+[data-theme="light"] .settings-card h2 {
+  color: #111 !important;
+}
+
+[data-theme="light"] .settings-field input {
+  background: #f5f5f5 !important;
+  border-color: #ddd !important;
+  color: #111 !important;
+}
+
+/* Growth Page */
+.growth-page {
+  background:
+    radial-gradient(circle at top, #160000, #000) !important;
+}
+
+[data-theme="light"] .growth-page {
+  background:
+    radial-gradient(circle at top, rgba(255, 45, 45, 0.05), rgba(0, 0, 0, 0)),
+    linear-gradient(180deg, #f8f8f8, #ffffff) !important;
+}
+
+[data-theme="light"] .gr-header h1,
+[data-theme="light"] .gr-card-title {
+  color: #111 !important;
+}
+
+[data-theme="light"] .gr-card {
+  background: #fff !important;
+  border-color: #e0e0e0 !important;
+  color: #111 !important;
+}
+
+/* Ensure edit modal is always visible */
+[data-theme="light"] .edit-modal {
+  background: #fff !important;
+  color: #111 !important;
+}
+
+[data-theme="light"] .edit-modal h2 {
+  color: #111 !important;
+}
+
+[data-theme="light"] .edit-modal input,
+[data-theme="light"] .edit-modal textarea {
+  background: #f5f5f5 !important;
+  border-color: #ddd !important;
+  color: #111 !important;
+}
+
+[data-theme="light"] .edit-section label {
+  color: #666 !important;
+}
+
+/* Ensure form fields are visible in light mode */
+[data-theme="light"] input::placeholder {
+  color: #999 !important;
+}
+
+[data-theme="light"] textarea::placeholder {
+  color: #999 !important;
+}
